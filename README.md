@@ -2,6 +2,8 @@
 
 The search engine will be built using Python and Django, and it will utilize various indexing algorithms to provide efficient and accurate search results.
 
+
+
 ## Indexing Algorithms
 
 The search engine will support three indexing algorithms: Boolean, Extended Boolean, and Vector Space Model.
@@ -38,4 +40,5 @@ The search engine will implement the three indexing algorithms as separate funct
 
 The search engine will also include several utility functions, such as highlight_terms and extract_relevant_paragraphs. The highlight_terms function will highlight the search terms in the document content, while the extract_relevant_paragraphs function will extract the paragraphs that contain the search terms.
 
+~ NOTE: this demo is based on my documents.
 [DEMO](https://irlsengine.pythonanywhere.com/)
