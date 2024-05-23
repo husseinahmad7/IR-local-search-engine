@@ -6,7 +6,6 @@ name = "pypi"
 [packages]
 django = "*"
 scikit-learn = "*"
-textract = "*"
 python-docx = "*"
 
 [dev-packages]
