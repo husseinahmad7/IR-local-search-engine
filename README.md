@@ -2,8 +2,6 @@
 
 The search engine will be built using Python and Django, and it will utilize various indexing algorithms to provide efficient and accurate search results.
 
-
-
 ## Indexing Algorithms
 
 The search engine will support three indexing algorithms: Boolean, Extended Boolean, and Vector Space Model.
