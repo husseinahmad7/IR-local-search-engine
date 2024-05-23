@@ -1,0 +1,54 @@
+{% extends "Search/base.html" %}
+{% block title %}Search Documents{% endblock %}
+{% block content %}
+{% load form_tags %}
+
+    <h1 class="title">Search Documents</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="field">
+            <label class="label">Query</label>
+            <div class="control">
+                {{ form.query|add_class:"input" }}
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">Algorithm</label>
+            <div class="control">
+                {{ form.algorithm|add_class:"select" }}
+            </div>
+        </div>
+        <div class="field">
+            <div class="control">
+                <button class="button is-primary" type="submit">Search</button>
+            </div>
+        </div>
+    </form>
+
+    <h2 class="subtitle has-text-centered has-text-info">Tutor Name: Dr. Bassel Mustaffa alkhatib </h2> 
+    <h2 class="subtitle has-text-left has-text-success">Student Names</h2>
+    <div class="content">
+        <ul class="list is-hoverable">
+            <li><a class="list-item has-background-light">Hussein Ahmad - hussein_148792</a></li>
+            <li><a class="list-item has-background-light">Abdelkrim_116801_C1</a></li>
+            <li><a class="list-item has-background-light">Hamza_144213</a></li>
+            <li><a class="list-item has-background-light">ibrahim_112518</a></li>
+        </ul>
+    </div>
+{% endblock %}
+
+
+{% comment %} <!DOCTYPE html>
+<html>
+<head>
+    <title>Search</title>
+</head>
+<body>
+    <h1>Search Documents</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Search</button>
+    </form>
+</body>
+</html> {% endcomment %}

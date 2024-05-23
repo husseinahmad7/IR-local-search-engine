@@ -1,0 +1,43 @@
+{% extends "Search/base.html" %}
+{% block title %}Index Documents{% endblock %}
+{% block content %}
+{% load form_tags %}
+
+    <h1 class="title">Index Documents</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="field">
+            <label class="label">Directory</label>
+            <div class="control">
+                {{ form.directory|add_class:"input" }}
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">Language</label>
+            <div class="control">
+                {{ form.language|add_class:"select" }}
+            </div>
+        </div>
+        <div class="field">
+            <div class="control">
+                <button class="button is-primary" type="submit">Index</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}
+
+
+{% comment %} <!DOCTYPE html>
+<html>
+<head>
+    <title>Index Documents</title>
+</head>
+<body>
+    <h1>Index Documents</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Index</button>
+    </form>
+</body>
+</html> {% endcomment %}

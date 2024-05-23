@@ -1,0 +1,89 @@
+{% extends "Search/base.html" %}
+{% block title %}Search Results{% endblock %}
+{% block content %}
+    <h1 class="title">Search Results</h1>
+    {% if results %}
+        <div class="content">
+            <ul>
+                {% for result in results %}
+                    <li>
+                        <div class="box">
+                            <strong class="title is-4">{{ result.document.title }}</strong>
+                            <p>Score: {{ result.score }}</p>
+                            <div class="content">
+                                <ul>
+                                    {% for paragraph in result.paragraphs %}
+                                        <li>{{ paragraph|safe }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% else %}
+        <p>No results found.</p>
+    {% endif %}
+{% endblock %}
+
+
+{% comment %} <!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>Search Results</h1>
+    <ul>
+        {% for result in results %}
+            <li>
+                <strong>{{ result.document.title }} - Score: {{ result.score }}</strong>
+                <ul>
+                    {% for paragraph in result.paragraphs %}
+                        <li>{{ paragraph|safe }}</li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html> {% endcomment %}
+
+
+{% comment %} <!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results</h1>
+    <ul>
+        {% if algorithm == 'vector'%}
+            {% for result in results %}
+                <li>{{ result.document.title }} - Score: {{ result.score }}</li>
+            {% endfor %}
+        {% elif algorithm == 'extended_boolean'%}
+            {% for result in results %}
+                <li>{{ result.document.title }} - Score: {{ result.score }}</li>
+            {% endfor %}
+        {%else%}
+            {% for result in results %}
+                <li>{{ result.title }}</li>
+            {% endfor %}
+        {%endif%}
+
+    </ul>
+</body>
+</html>  {% endcomment %}
+
+{% comment %} <ul>
+    {% for paragraph in result.paragraphs %}
+        <li>{{ paragraph|safe }}</li>
+    {% endfor %}
+</ul> {% endcomment %}
